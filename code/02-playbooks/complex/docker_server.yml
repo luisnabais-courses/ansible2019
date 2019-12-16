@@ -1,0 +1,12 @@
+#################################################
+# Docker Installation
+#################################################
+---
+  - hosts: localenv
+    become: yes
+  
+    vars:
+      - docker_users: ['vagrant', 'lnabais']
+    
+    roles:
+      - docker

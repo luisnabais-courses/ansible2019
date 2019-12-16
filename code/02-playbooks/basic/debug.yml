@@ -1,0 +1,6 @@
+---
+- hosts: localenv
+  become: yes
+  
+  tasks:
+  - debug: msg="Test message"

@@ -1,0 +1,2 @@
+---
+sys_packages: [ 'curl', 'git', 'mlocate', 'vim', 'wget']

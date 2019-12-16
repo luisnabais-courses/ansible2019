@@ -1,0 +1,15 @@
+#################################################
+# Base setup for a Linux server
+#################################################
+---
+- hosts: localenv
+  become: yes
+
+  #vars:
+  #  - newtimezone: Europe/Lisbon
+  
+  roles:
+    - users
+    - base_packages
+    - epel
+    - ntp

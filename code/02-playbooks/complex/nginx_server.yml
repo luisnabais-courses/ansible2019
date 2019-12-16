@@ -1,0 +1,9 @@
+---
+- hosts: localenv
+  become: yes
+
+  vars:
+    deploy_homepage: true
+
+  roles:
+    - nginx

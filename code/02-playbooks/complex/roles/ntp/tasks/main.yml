@@ -1,0 +1,13 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure NTP is installed.
+  yum: name=ntp state=present
+
+- name: Set timezone
+  timezone:
+    name: "{{ newtimezone }}"
+
+- name: Ensure NTP is running.
+  service: name={{ ntp_daemon }} state=started enabled=yes

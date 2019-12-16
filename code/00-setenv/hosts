@@ -1,0 +1,16 @@
+[localenv]
+centos
+debian
+ubuntu
+
+[debian_based]
+debian
+ubuntu
+
+[redhat_based]
+centos
+
+[localenv:vars]
+ansible_user=vagrant
+
+
