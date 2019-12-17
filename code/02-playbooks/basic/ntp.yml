@@ -6,8 +6,13 @@
   - vars_{{ ansible_os_family|lower }}.yml
   
   tasks:
+  - name: Update cache on Debian-based
+    apt:
+      update_cache: yes
+    when: ansible_os_family == "Debian"
+
   - name: Ensure NTP is installed.
-    yum: name=ntp state=present
+    package: name=ntp state=present
   
   - name: Ensure NTP is running.
     service: name={{ ntp_daemon }} state=started enabled=yes

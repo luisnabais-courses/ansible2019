@@ -1,0 +1,13 @@
+---
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Ensure Chrony is installed.
+  yum: name=chrony state=present
+
+- name: Set timezone
+  timezone:
+    name: "{{ newtimezone }}"
+
+- name: Ensure Chriony is running.
+  service: name={{ chrony_daemon }} state=started enabled=yes
